@@ -61,11 +61,11 @@ function displayScoreBoard (playerScore, computerScore) {
     `;
 
     if (playerScore > computerScore) {
-        playerFeedback += "<br><br> You won!!!";
+        playerFeedback += "<br><br> You won this round!!!";
     } else if (computerScore > playerScore){
-        computerFeedback += "<br><br> Computer won...";
+        computerFeedback += "<br><br> Computer won this round...";
     } else {
-        computerFeedback += "<br><br> Its a tie!";
+        computerFeedback += "<br><br> Its a tie this round!";
     }
 
     playerDisplay.innerHTML = playerFeedback;
@@ -94,10 +94,20 @@ function playRound(player, computer) {
         // Currently a tie
     }
     console.log("\n");
+    console.log(playerScore + " " + computerScore)
     displayScoreBoard(playerScore, computerScore);
+
+    if (playerScore > 4 && computerScore < 5){
+        alert("You won! Thanks for playing");
+    } else if (playerScore < 5 && computerScore > 4){
+        alert("You lost.. Thanks for playing");
+    } else {
+        //Only happens at the start of the game where scores are equal
+    }
 }
 
-console.log(playerSelection());
+// console.log(playerSelection());
+playerSelection();
 
 // playRound(player, comp);
 // function playGame() {
