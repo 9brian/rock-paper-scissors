@@ -15,7 +15,6 @@ function computerSelection(){
         choice = "scissors";
     }
 
-
     return choice;
 }
 
@@ -26,9 +25,7 @@ function playerSelection() {
         // and for each one we add a 'click' listener
         button.addEventListener("click", () => {
             let choice = button.id;
-
             playRound(choice, computerSelection())
-            // return getplayeranChoice;
         });
     });
 }
@@ -44,7 +41,7 @@ function playRound(player, computer) {
     ){
         playerScore += 1;
         console.log("Your won!");
-        console.log("Current Your score is " + playerScore);
+        console.log("Your current score is " + playerScore);
         console.log("Current computer score is " + computerScore);
     } else if (
         (player == "rock" && computer== "paper") ||
@@ -53,12 +50,12 @@ function playRound(player, computer) {
     ){
         computerScore += 1;
         console.log("Computer won!");
-        console.log("Current Your score is " + playerScore);
+        console.log("Your current score is " + playerScore);
         console.log("Current computer score is " + computerScore);
 
     } else {
         console.log("Its a tie!");
-        console.log("Current Your score is " + playerScore);
+        console.log("Your current score is " + playerScore);
         console.log("Current computer score is " + computerScore);
     }
     console.log("\n");
