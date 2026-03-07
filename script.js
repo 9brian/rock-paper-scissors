@@ -30,6 +30,21 @@ function playerSelection() {
     });
 }
 
+const container = document.querySelector("#container"); 
+
+const scoreBoard = document.createElement("div");
+scoreBoard.classList.add("scoreBoard"); // add scoreBoard class
+// // scoreBoard.textContent = "This is the glorious text-content!";
+container.append(scoreBoard); 
+
+
+const score = document.createElement("p");
+score.classList.add("score");
+score.textContent = "this works!";
+scoreBoard.append(score);
+
+
+
 function playRound(player, computer) {
     console.log("Your choice was " + player);
     console.log("Computer choice was " + computer);
