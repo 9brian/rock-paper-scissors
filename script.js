@@ -1,8 +1,9 @@
 console.log("Hello World!");
 
+let humanScore = 0;
+let computerScore = 0;
 
-
-function getComputerChoice(){
+function computerSelection(){
     const number = Math.floor(Math.random() * 3) - 1;
     let choice = "";
 
@@ -24,18 +25,13 @@ function playerSelection() {
     buttons.forEach((button) => {
         // and for each one we add a 'click' listener
         button.addEventListener("click", () => {
-            // const getHumanChoice = button.id;
+            let choice = button.id;
+
+            playRound(choice, computerSelection())
             // return getHumanChoice;
         });
     });
-
 }
-
-let humanScore = 0;
-let computerScore = 0;
-
-const comp = getComputerChoice();
-const hum = playerSelection();
 
 function playRound(hum, comp) {
     console.log("Human choice was " + hum);
@@ -74,7 +70,7 @@ console.log(playerSelection());
 // function playGame() {
 //     for (let i = 0; i < 5; i++) {
 //         const hum = playerSelection();
-//         const comp = getComputerChoice();
+//         const comp = computerSelection();
 
 //         playRound(hum, comp);
 //         alert("End of round " + (i + 1));
