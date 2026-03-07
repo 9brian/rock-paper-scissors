@@ -17,9 +17,19 @@ function getComputerChoice(){
 }
 
 function getHumanChoice() {
-    let choice = prompt("Rock, paper or scissors?").toLowerCase();
+    // let choice = prompt("Rock, paper or scissors?").toLowerCase();
 
-    return choice;
+    
+    // buttons is a node list. It looks and acts much like an array.
+    const buttons = document.querySelectorAll("button");
+    // we use the .forEach method to iterate through each button
+    buttons.forEach((button) => {
+        // and for each one we add a 'click' listener
+        button.addEventListener("click", () => {
+            return button.id;
+        });
+    });
+
 }
 
 let humanScore = 0;
@@ -60,17 +70,17 @@ function playRound(hum, comp) {
 }
 
 // playRound(hum, comp);
-function playGame() {
-    for (let i = 0; i < 5; i++) {
-        const hum = getHumanChoice();
-        const comp = getComputerChoice();
+// function playGame() {
+//     for (let i = 0; i < 5; i++) {
+//         const hum = getHumanChoice();
+//         const comp = getComputerChoice();
 
-        playRound(hum, comp);
-        alert("End of round " + (i + 1));
-    }
+//         playRound(hum, comp);
+//         alert("End of round " + (i + 1));
+//     }
 
-    console.log("Final Human Score:", humanScore);
-    console.log("Final Computer Score:", computerScore);
-}
+//     console.log("Final Human Score:", humanScore);
+//     console.log("Final Computer Score:", computerScore);
+// }
 
-playGame();
+// playGame();
