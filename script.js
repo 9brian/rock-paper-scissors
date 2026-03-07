@@ -1,6 +1,6 @@
 console.log("Hello World!");
 
-let humanScore = 0;
+let playerScore = 0;
 let computerScore = 0;
 
 function computerSelection(){
@@ -28,37 +28,37 @@ function playerSelection() {
             let choice = button.id;
 
             playRound(choice, computerSelection())
-            // return getHumanChoice;
+            // return getplayeranChoice;
         });
     });
 }
 
-function playRound(hum, comp) {
-    console.log("Human choice was " + hum);
-    console.log("Computer choice was " + comp);
+function playRound(player, computer) {
+    console.log("Your choice was " + player);
+    console.log("Computer choice was " + computer);
 
     if (
-        (comp == "rock" && hum == "paper") ||
-        (comp == "paper" && hum == "scissors") ||
-        (comp == "scissors" && hum == "rock")
+        (computer== "rock" && player == "paper") ||
+        (computer== "paper" && player == "scissors") ||
+        (computer== "scissors" && player == "rock")
     ){
-        humanScore += 1;
-        console.log("Human won!");
-        console.log("Current human score is " + humanScore);
+        playerScore += 1;
+        console.log("Your won!");
+        console.log("Current Your score is " + playerScore);
         console.log("Current computer score is " + computerScore);
     } else if (
-        (hum == "rock" && comp == "paper") ||
-        (hum == "paper" && comp == "scissors") ||
-        (hum == "scissors" && comp == "rock")
+        (player == "rock" && computer== "paper") ||
+        (player == "paper" && computer== "scissors") ||
+        (player == "scissors" && computer== "rock")
     ){
         computerScore += 1;
         console.log("Computer won!");
-        console.log("Current human score is " + humanScore);
+        console.log("Current Your score is " + playerScore);
         console.log("Current computer score is " + computerScore);
 
     } else {
         console.log("Its a tie!");
-        console.log("Current human score is " + humanScore);
+        console.log("Current Your score is " + playerScore);
         console.log("Current computer score is " + computerScore);
     }
     console.log("\n");
@@ -66,17 +66,17 @@ function playRound(hum, comp) {
 
 console.log(playerSelection());
 
-// playRound(hum, comp);
+// playRound(player, comp);
 // function playGame() {
 //     for (let i = 0; i < 5; i++) {
-//         const hum = playerSelection();
-//         const comp = computerSelection();
+//         const player = playerSelection();
+//         const computer= computerSelection();
 
-//         playRound(hum, comp);
+//         playRound(player, comp);
 //         alert("End of round " + (i + 1));
 //     }
 
-//     console.log("Final Human Score:", humanScore);
+//     console.log("Final Your Score:", playerScore);
 //     console.log("Final Computer Score:", computerScore);
 // }
 
