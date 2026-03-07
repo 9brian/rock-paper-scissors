@@ -97,13 +97,13 @@ function playRound(player, computer) {
     console.log(playerScore + " " + computerScore)
     displayScoreBoard(playerScore, computerScore);
 
-    if (playerScore > 4 && computerScore < 5){
-        alert("You won! Thanks for playing");
-    } else if (playerScore < 5 && computerScore > 4){
-        alert("You lost.. Thanks for playing");
-    } else {
-        //Only happens at the start of the game where scores are equal
-    }
+    setTimeout(() => {
+        if (playerScore === 5){
+            alert("You won! Thanks for playing");
+        } else if (computerScore === 5){
+            alert("You lost.. Thanks for playing");
+        }
+    }, 0);
 }
 
 // console.log(playerSelection());
