@@ -49,6 +49,12 @@ scoreBoard.append(computerDisplay);
 
 function displayScoreBoard (playerScore, computerScore) {
 
+    /*
+        Clean up logic in this function; 
+        create another p element that displays the feedback
+        Instead of appending it.
+    */
+
     let playerFeedback = playerDisplay.innerHTML = `
     Player Display
     <br>=============
