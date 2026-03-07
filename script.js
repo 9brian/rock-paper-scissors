@@ -38,11 +38,39 @@ scoreBoard.classList.add("scoreBoard"); // add scoreBoard class
 container.append(scoreBoard); 
 
 
-const score = document.createElement("p");
-score.classList.add("score");
-score.textContent = "this works!";
-scoreBoard.append(score);
+const playerDisplay = document.createElement("p");
+playerDisplay.classList.add("playerDisplay");
 
+const computerDisplay = document.createElement("p");
+computerDisplay.classList.add("computerDisplay");
+
+scoreBoard.append(playerDisplay);
+scoreBoard.append(computerDisplay);
+
+function displayScoreBoard (playerScore, computerScore) {
+
+    let playerFeedback = playerDisplay.innerHTML = `
+    Player Display
+    <br>=============
+    <br>Your current score is ${playerScore}
+    `;
+    let computerFeedback = computerDisplay.innerHTML = `
+    Computer Display
+    <br>=============
+    <br>Your current score is ${computerScore}
+    `;
+
+    if (playerScore > computerScore) {
+        playerFeedback += "<br><br> You won!!!";
+    } else if (computerScore > playerScore){
+        computerFeedback += "<br><br> Computer won...";
+    } else {
+        computerFeedback += "<br><br> Its a tie!";
+    }
+
+    playerDisplay.innerHTML = playerFeedback;
+    computerDisplay.innerHTML = computerFeedback;
+}
 
 
 function playRound(player, computer) {
@@ -55,25 +83,18 @@ function playRound(player, computer) {
         (computer== "scissors" && player == "rock")
     ){
         playerScore += 1;
-        console.log("Your won!");
-        console.log("Your current score is " + playerScore);
-        console.log("Current computer score is " + computerScore);
     } else if (
         (player == "rock" && computer== "paper") ||
         (player == "paper" && computer== "scissors") ||
         (player == "scissors" && computer== "rock")
     ){
         computerScore += 1;
-        console.log("Computer won!");
-        console.log("Your current score is " + playerScore);
-        console.log("Current computer score is " + computerScore);
 
     } else {
-        console.log("Its a tie!");
-        console.log("Your current score is " + playerScore);
-        console.log("Current computer score is " + computerScore);
+        // Currently a tie
     }
     console.log("\n");
+    displayScoreBoard(playerScore, computerScore);
 }
 
 console.log(playerSelection());
