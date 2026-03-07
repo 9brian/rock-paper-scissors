@@ -1,5 +1,7 @@
 console.log("Hello World!");
 
+
+
 function getComputerChoice(){
     const number = Math.floor(Math.random() * 3) - 1;
     let choice = "";
@@ -16,17 +18,14 @@ function getComputerChoice(){
     return choice;
 }
 
-function getHumanChoice() {
-    // let choice = prompt("Rock, paper or scissors?").toLowerCase();
-
-    
-    // buttons is a node list. It looks and acts much like an array.
+function playerSelection() {
     const buttons = document.querySelectorAll("button");
     // we use the .forEach method to iterate through each button
     buttons.forEach((button) => {
         // and for each one we add a 'click' listener
         button.addEventListener("click", () => {
-            return button.id;
+            // const getHumanChoice = button.id;
+            // return getHumanChoice;
         });
     });
 
@@ -36,7 +35,7 @@ let humanScore = 0;
 let computerScore = 0;
 
 const comp = getComputerChoice();
-const hum = getHumanChoice();
+const hum = playerSelection();
 
 function playRound(hum, comp) {
     console.log("Human choice was " + hum);
@@ -69,10 +68,12 @@ function playRound(hum, comp) {
     console.log("\n");
 }
 
+console.log(playerSelection());
+
 // playRound(hum, comp);
 // function playGame() {
 //     for (let i = 0; i < 5; i++) {
-//         const hum = getHumanChoice();
+//         const hum = playerSelection();
 //         const comp = getComputerChoice();
 
 //         playRound(hum, comp);
